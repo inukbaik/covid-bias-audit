@@ -106,8 +106,10 @@ def _plot_fairness(table: pd.DataFrame, path: Path) -> None:
         ax.set_title(title)
         ax.set_ylim(0, 1.05)
         ax.grid(axis="x", visible=False)
-    axes[0].legend(loc="lower left", fontsize=8)
-    fig.suptitle("Group fairness on the 2021 test set (threshold 0.5)")
+    handles, labels = axes[0].get_legend_handles_labels()
+    fig.legend(handles, labels, loc="lower center", ncol=2, bbox_to_anchor=(0.5, -0.02))
+    fig.suptitle("Group fairness on the 2021 test set (threshold 0.5)", y=1.04)
+    fig.tight_layout(rect=(0, 0.08, 1, 1))
     save(fig, path)
 
 

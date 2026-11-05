@@ -27,7 +27,7 @@ from covid_bias.evaluation.validation import (
     permutation_importance_cv,
     summarise_scores,
 )
-from covid_bias.plotting import PALETTE, new_figure, save
+from covid_bias.plotting import PALETTE, new_figure, plain_log_axis, save
 
 log = logging.getLogger(__name__)
 
@@ -115,6 +115,7 @@ def _plot_ratios(table: pd.DataFrame, path: Path) -> None:
         )
     ax.axvline(1, color=PALETTE["grey"], ls="--", lw=1)
     ax.set_xscale("log")
+    plain_log_axis(ax)
     ax.set_yticks(np.arange(len(races))[::-1], races)
     ax.set_xlabel("Share of deaths / share of population (log scale; death-weighted mean, 95% CI)")
     ax.set_title("County disparity ratios by race (only counties with unsuppressed data)")

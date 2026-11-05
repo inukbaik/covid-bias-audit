@@ -48,6 +48,18 @@ def new_figure(width: float = 7.0, height: float = 4.5, **kwargs):
     return plt.subplots(figsize=(width, height), **kwargs)
 
 
+def plain_log_axis(ax, axis: str = "x", ticks=(0.2, 0.3, 0.5, 1, 2, 3, 5, 10)) -> None:
+    """Log-scale axis with plain decimal tick labels and no minor labels."""
+    from matplotlib.ticker import FixedLocator, FuncFormatter, NullFormatter
+
+    target = ax.xaxis if axis == "x" else ax.yaxis
+    lo, hi = ax.get_xlim() if axis == "x" else ax.get_ylim()
+    shown = [t for t in ticks if lo <= t <= hi] or list(ticks)
+    target.set_major_locator(FixedLocator(shown))
+    target.set_major_formatter(FuncFormatter(lambda v, _: f"{v:g}"))
+    target.set_minor_formatter(NullFormatter())
+
+
 def save(fig, path: Path) -> Path:
     """Save a figure (creating parents) and close it."""
     path.parent.mkdir(parents=True, exist_ok=True)

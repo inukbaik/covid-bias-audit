@@ -27,7 +27,7 @@ from covid_bias.evaluation.validation import (
     permutation_importance_cv,
     summarise_scores,
 )
-from covid_bias.plotting import PALETTE, new_figure, save
+from covid_bias.plotting import PALETTE, new_figure, plain_log_axis, save
 
 log = logging.getLogger(__name__)
 
@@ -107,6 +107,7 @@ def _plot_forest(ors: pd.DataFrame, path: Path) -> None:
         ax.plot(row.odds_ratio, yi, "o", color=c)
     ax.axvline(1, color=PALETTE["grey"], ls="--", lw=1)
     ax.set_xscale("log")
+    plain_log_axis(ax)
     ax.set_yticks(y, [f"{r.level} ({r.factor})" for r in sub.itertuples()])
     ax.set_xlabel("Odds ratio of COVID-19 among all deaths (log scale, 95% CI)")
     ax.set_title(
