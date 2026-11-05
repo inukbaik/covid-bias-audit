@@ -1,0 +1,243 @@
+{
+  "education": {
+    "n_cells": 251,
+    "total_deaths": 3312636,
+    "covid_deaths": 373682,
+    "glm_dispersion": 54.37,
+    "or_race": {
+      "Hispanic": {
+        "or": 3.166,
+        "ci_low": 2.942,
+        "ci_high": 3.408
+      },
+      "NH AIAN": {
+        "or": 2.731,
+        "ci_low": 2.139,
+        "ci_high": 3.487
+      },
+      "NH Asian": {
+        "or": 1.721,
+        "ci_low": 1.494,
+        "ci_high": 1.983
+      },
+      "NH Black": {
+        "or": 1.723,
+        "ci_low": 1.602,
+        "ci_high": 1.853
+      },
+      "NH Multiracial": {
+        "or": 0.985,
+        "ci_low": 0.624,
+        "ci_high": 1.553
+      },
+      "NH NHPI": {
+        "or": 2.11,
+        "ci_low": 1.139,
+        "ci_high": 3.909
+      }
+    },
+    "or_education": {
+      "HS or less": {
+        "or": 1.17,
+        "ci_low": 1.089,
+        "ci_high": 1.257
+      },
+      "Some college": {
+        "or": 1.002,
+        "ci_low": 0.917,
+        "ci_high": 1.095
+      }
+    },
+    "cv_r2_rf": 0.666,
+    "cv_r2_rf_std": 0.189,
+    "cv_mae_pp_rf": 1.89,
+    "permutation_importance": {
+      "race": 1.618,
+      "age_group": 0.982,
+      "sex": -0.002,
+      "education": -0.004
+    }
+  },
+  "county": {
+    "n_counties": 1229,
+    "n_counties_modelled": 1229,
+    "income_match_rate": 1.0,
+    "disparity_covid": {
+      "NH White": {
+        "n": 1227,
+        "weighted_mean": 1.129,
+        "ci_low": 1.109,
+        "ci_high": 1.149
+      },
+      "NH Black": {
+        "n": 707,
+        "weighted_mean": 1.013,
+        "ci_low": 0.979,
+        "ci_high": 1.046
+      },
+      "NH AIAN": {
+        "n": 168,
+        "weighted_mean": 2.084,
+        "ci_low": 1.676,
+        "ci_high": 2.607
+      },
+      "NH Asian": {
+        "n": 305,
+        "weighted_mean": 0.562,
+        "ci_low": 0.522,
+        "ci_high": 0.606
+      },
+      "NH NHPI": {
+        "n": 38,
+        "weighted_mean": 2.01,
+        "ci_low": 1.828,
+        "ci_high": 2.24
+      },
+      "Hispanic": {
+        "n": 622,
+        "weighted_mean": 0.693,
+        "ci_low": 0.654,
+        "ci_high": 0.732
+      },
+      "Other": {
+        "n": 137,
+        "weighted_mean": 0.506,
+        "ci_low": 0.392,
+        "ci_high": 0.66
+      }
+    },
+    "disparity_allcause": {
+      "NH White": {
+        "n": 1229,
+        "weighted_mean": 1.29,
+        "ci_low": 1.254,
+        "ci_high": 1.325
+      },
+      "NH Black": {
+        "n": 1118,
+        "weighted_mean": 0.964,
+        "ci_low": 0.919,
+        "ci_high": 1.017
+      },
+      "NH AIAN": {
+        "n": 541,
+        "weighted_mean": 0.863,
+        "ci_low": 0.764,
+        "ci_high": 0.967
+      },
+      "NH Asian": {
+        "n": 745,
+        "weighted_mean": 0.439,
+        "ci_low": 0.409,
+        "ci_high": 0.477
+      },
+      "NH NHPI": {
+        "n": 122,
+        "weighted_mean": 1.017,
+        "ci_low": 0.875,
+        "ci_high": 1.142
+      },
+      "Hispanic": {
+        "n": 1078,
+        "weighted_mean": 0.423,
+        "ci_low": 0.396,
+        "ci_high": 0.45
+      },
+      "Other": {
+        "n": 676,
+        "weighted_mean": 0.391,
+        "ci_low": 0.321,
+        "ci_high": 0.468
+      }
+    },
+    "cv_r2_rf": -0.159,
+    "cv_r2_ridge": -0.118,
+    "cv_mae_pp_rf": 1.91,
+    "permutation_importance": {
+      "log_income": 0.141,
+      "pop_share_black": 0.049,
+      "pop_share_other": 0.049,
+      "pop_share_aian": 0.04,
+      "pop_share_nhpi": 0.039,
+      "pop_share_white": 0.004,
+      "pop_share_hispanic": -0.027,
+      "urban_rural": -0.107,
+      "pop_share_asian": -0.231
+    },
+    "glm_dispersion": 45.18,
+    "glm_odds_ratios": {
+      "urban_rural: Large fringe metro": 0.999,
+      "urban_rural: Medium metro": 1.001,
+      "urban_rural: Micropolitan": 1.036,
+      "urban_rural: Noncore": 0.98,
+      "urban_rural: Small metro": 1.098,
+      "log_income (per log unit)": 0.826,
+      "pop_share_black (per 10 pp)": 1.032,
+      "pop_share_aian (per 10 pp)": 1.061,
+      "pop_share_asian (per 10 pp)": 1.065,
+      "pop_share_nhpi (per 10 pp)": 0.608,
+      "pop_share_hispanic (per 10 pp)": 1.058,
+      "pop_share_other (per 10 pp)": 0.6
+    }
+  },
+  "risk": {
+    "n_train_cells": 1319,
+    "n_test_cells": 994,
+    "tau": 0.1137,
+    "train_base_rate": 0.33,
+    "test_base_rate": 0.372,
+    "scores": {
+      "Majority baseline": {
+        "accuracy": 0.628,
+        "balanced_accuracy": 0.5,
+        "roc_auc": 0.5
+      },
+      "Logistic: age": {
+        "accuracy": 0.672,
+        "balanced_accuracy": 0.636,
+        "roc_auc": 0.73
+      },
+      "Logistic: age+sex": {
+        "accuracy": 0.654,
+        "balanced_accuracy": 0.602,
+        "roc_auc": 0.725
+      },
+      "Logistic: age+sex+race": {
+        "accuracy": 0.682,
+        "balanced_accuracy": 0.632,
+        "roc_auc": 0.753
+      },
+      "Gradient boosting: age+sex+race": {
+        "accuracy": 0.678,
+        "balanced_accuracy": 0.643,
+        "roc_auc": 0.757
+      }
+    },
+    "fairness": {
+      "Race-aware (age+sex+race)": {
+        "demographic_parity_difference": 0.652,
+        "equalized_odds_difference": 0.807
+      },
+      "Race-blind (age+sex)": {
+        "demographic_parity_difference": 0.076,
+        "equalized_odds_difference": 0.106
+      }
+    }
+  },
+  "original": {
+    "education_r2_seed42": 0.918,
+    "education_r2_min": -0.53,
+    "education_r2_median": 0.815,
+    "education_r2_max": 0.988,
+    "education_r2_same_model_cv": 0.689,
+    "county_r2": 0.506,
+    "county_n_after_merge": 1159,
+    "county_n_dropped": 70,
+    "county_top_feature": "Urban Rural Description_Large central metro",
+    "risk_svm_accuracy": 0.753,
+    "risk_majority_baseline": 0.612,
+    "risk_rows_score_gt_1": 7,
+    "risk_sex_only_accuracy": 0.612,
+    "risk_sex_only_unique_predictions": 1
+  }
+}

@@ -1,0 +1,33 @@
+analysis,metric,value
+education,r2_seed42,0.917847
+education,r2_min_over_seeds,-0.530276
+education,r2_median_over_seeds,0.814827
+education,r2_max_over_seeds,0.987629
+education,n_seeds,50
+education,r2_same_model_5fold_cv_mean,0.689211
+education,r2_analysis1_weighted_cv_share_mean,0.66586
+county,r2_random_split_seed42,0.506475
+county,n_suppressed_cells_filled_with_zero,5114
+county,n_counties_after_merge,1159
+county,n_dropped,70
+county,importance_Urban Rural Description_Large central metro,0.440751
+county,importance_Non-Hispanic Asian,0.218849
+county,importance_Other,0.0767135
+county,importance_Hispanic,0.0759336
+county,importance_Non-Hispanic Black,0.0609914
+county,importance_Income_per_Capita,0.048936
+county,importance_Non-Hispanic White,0.0464201
+county,importance_Non-Hispanic American Indian or Alaska Native,0.012223
+county,importance_Non-Hispanic Native Hawaiian or Other Pacific Islander,0.00667446
+county,importance_Urban Rural Description_Micropolitan,0.00556696
+county,importance_Urban Rural Description_Medium metro,0.00252137
+county,importance_Urban Rural Description_Small metro,0.0024752
+county,importance_Urban Rural Description_Noncore,0.00129827
+county,importance_Urban Rural Description_Large fringe metro,0.000645863
+risk,svm_accuracy,0.752646
+risk,majority_baseline_accuracy,0.612434
+risk,n_rows_score_gt_1,7
+risk,mean_score_threshold,0.188794
+risk,sex_only_svm_accuracy,0.612434
+risk,sex_only_unique_predicted_classes,1
+risk,underlying_share_of_double_counted_sum,0.47556

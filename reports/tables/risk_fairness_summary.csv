@@ -1,0 +1,3 @@
+model,demographic_parity_difference,tpr_range,fpr_range,equalized_odds_difference
+Race-aware (age+sex+race),0.652174,0.807018,0.54321,0.807018
+Race-blind (age+sex),0.076087,0.10148,0.105609,0.105609
