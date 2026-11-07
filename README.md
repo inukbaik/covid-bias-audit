@@ -10,7 +10,8 @@ Dr. Elizabeth Hewitt). It has since been rebuilt as a reproducible, tested Pytho
 The original paper ([`docs/paper/`](docs/paper/ai-racism-final-paper.pdf)) used random-forest feature
 importance and an SVM on CDC data. The rebuild re-runs those pipelines alongside corrected ones. Several
 headline metrics turned out to come from methodological errors, not real signal, and the corrected
-analyses tell a different story. The [methodology notes](docs/methodology.md) document each error and its fix.
+analyses tell a different story. The [methodology notes](docs/methodology.md) document each error and its fix,
+and the [errata](docs/paper/ERRATA.md) lists the corrections claim by claim against the paper.
 
 ## Key findings
 
