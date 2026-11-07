@@ -1,13 +1,16 @@
-# Auditing Racial Bias in COVID-19 Mortality Models
+# COVID Bias Audit
 
-How do biased data and flawed modelling choices change what a machine-learning analysis says about race?
-This project rebuilds an undergraduate research study (EST 441, Interdisciplinary Senior Project,
-advised by Dr. Elizabeth Hewitt) as a reproducible, tested Python package. It then uses that package
-to **audit the original study's own methods**.
+*Auditing how biased data and modelling choices affect machine-learning results on COVID-19 mortality data.*
+
+This project checks whether the data and modelling choices behind COVID-19 mortality analyses distort
+what machine-learning models conclude about demographic groups (race and ethnicity, education, age and sex).
+It began as an undergraduate research study (EST 441, Interdisciplinary Senior Project, advised by
+Dr. Elizabeth Hewitt). It has since been rebuilt as a reproducible, tested Python package.
 
 The original paper ([`docs/paper/`](docs/paper/ai-racism-final-paper.pdf)) used random-forest feature
-importance and an SVM on CDC data. Re-running it showed that its headline metrics came from
-methodological errors, not real signal. The [methodology audit](docs/methodology.md) documents each error and its fix.
+importance and an SVM on CDC data. The rebuild re-runs those pipelines alongside corrected ones. Several
+headline metrics turned out to come from methodological errors, not real signal, and the corrected
+analyses tell a different story. The [methodology notes](docs/methodology.md) document each error and its fix.
 
 ## Key findings
 
@@ -53,8 +56,8 @@ What the corrected analyses show:
 ## Quick start
 
 ```bash
-git clone https://github.com/inukbaik/research-racial-biased-ml.git
-cd research-racial-biased-ml
+git clone https://github.com/inukbaik/covid-bias-audit.git
+cd covid-bias-audit
 python -m venv .venv && source .venv/bin/activate
 make install        # pip install -e ".[dev]"
 make test           # pytest (about 15 s)
