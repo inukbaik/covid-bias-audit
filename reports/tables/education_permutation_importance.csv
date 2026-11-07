@@ -1,0 +1,5 @@
+feature,importance_mean,importance_std
+race,1.61769,0.841803
+age_group,0.981507,0.868863
+sex,-0.00203531,0.0403025
+education,-0.00406879,0.0535869

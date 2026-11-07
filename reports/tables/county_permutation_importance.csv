@@ -1,0 +1,10 @@
+feature,importance_mean,importance_std
+log_income,0.141035,0.132335
+pop_share_black,0.0494205,0.052984
+pop_share_other,0.0488978,0.135069
+pop_share_aian,0.0404791,0.0575216
+pop_share_nhpi,0.0386527,0.0708084
+pop_share_white,0.00389667,0.0479314
+pop_share_hispanic,-0.0267014,0.280074
+urban_rural,-0.107249,0.247744
+pop_share_asian,-0.231439,0.474734

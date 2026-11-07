@@ -1,0 +1,4 @@
+model,r2_mean,r2_std,mae_mean,mae_std,n_folds
+Weighted-mean baseline,-0.0383383,0.0592849,4.20636,1.58927,50
+Ridge (one-hot),0.754088,0.111392,1.78662,0.580623,50
+Random forest,0.66586,0.188746,1.89128,0.742983,50

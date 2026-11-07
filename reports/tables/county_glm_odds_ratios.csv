@@ -1,0 +1,13 @@
+term,odds_ratio,ci_low,ci_high,p_value
+urban_rural: Large fringe metro,0.998837,0.948677,1.05165,0.964687
+urban_rural: Medium metro,1.00148,0.914485,1.09675,0.974579
+urban_rural: Micropolitan,1.03564,0.903426,1.1872,0.615287
+urban_rural: Noncore,0.979767,0.836094,1.14813,0.80054
+urban_rural: Small metro,1.09847,0.985875,1.22392,0.0887285
+log_income (per log unit),0.826163,0.726395,0.939634,0.00363505
+pop_share_black (per 10 pp),1.03181,1.01127,1.05278,0.00227515
+pop_share_aian (per 10 pp),1.06078,0.988868,1.13792,0.0994731
+pop_share_asian (per 10 pp),1.06473,0.93862,1.20778,0.329491
+pop_share_nhpi (per 10 pp),0.60813,0.14891,2.48354,0.488428
+pop_share_hispanic (per 10 pp),1.05762,1.03688,1.07878,2.94689e-08
+pop_share_other (per 10 pp),0.600156,0.250362,1.43867,0.25238

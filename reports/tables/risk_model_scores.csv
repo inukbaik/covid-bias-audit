@@ -1,0 +1,6 @@
+model,features,accuracy,balanced_accuracy,f1,roc_auc,brier,test_base_rate,n_train,n_test,tau
+Majority baseline,none,0.627767,0.5,0,0.5,0.235477,0.372233,1319,994,0.113679
+Logistic: age,age_group,0.672032,0.636469,0.530259,0.729725,0.198903,0.372233,1319,994,0.113679
+Logistic: age+sex,age_group+sex,0.653924,0.602244,0.4625,0.724792,0.199123,0.372233,1319,994,0.113679
+Logistic: age+sex+race,age_group+sex+race,0.682093,0.63238,0.50625,0.753309,0.199987,0.372233,1319,994,0.113679
+Gradient boosting: age+sex+race,age_group+sex+race,0.678068,0.642927,0.538905,0.756982,0.201079,0.372233,1319,994,0.113679
