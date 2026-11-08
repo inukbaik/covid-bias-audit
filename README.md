@@ -88,6 +88,56 @@ reports/                  Generated figures, tables and metrics
 docs/                     Methodology audit and the original paper
 ```
 
+## Subdirectories & System Boundaries
+
+- src: [`./src/README.md`](./src/README.md) - The source root. It contains
+  [`covid_bias`](./src/covid_bias/README.md), which provides the CLI, the frozen
+  `Config`, and the shared plotting style, and these subpackages:
+  - [`data`](./src/covid_bias/data/README.md): validated loaders for `data/raw/`
+  - [`evaluation`](./src/covid_bias/evaluation/README.md): metrics, CV, permutation
+    importance, and the quasi-binomial GLM
+  - [`analysis`](./src/covid_bias/analysis/README.md): the four `run(cfg, out)`
+    analyses
+- tests: Loader, metric, leakage, and end-to-end smoke tests (pytest). Test-only
+  folder, so it has no contract file.
+- data/raw, reports, docs: data, generated outputs, and prose. These folders hold no
+  code, so they have no contract files.
+
+## Global Invariants
+
+- **Raw data is read-only.** Nothing in `src/` writes to `data/raw/`. Every loader
+  checks columns, category sets, uniqueness, and count bounds, and raises
+  `ValueError` on a mismatch. The exception is `analysis/original.py`, which reads
+  the raw CSVs directly so it can reproduce the original errors.
+- **Runs are reproducible.** All randomness comes from `Config.seed` (default 42).
+  `original.py` hard-codes seed 42 to match the original code.
+- **Category labels and reference levels are defined once**, in
+  `src/covid_bias/config.py`.
+- **Corrected analyses avoid leakage by design:**
+  - county CV is grouped by state
+  - the risk model trains on 2020, tests on 2021, and takes its label threshold from
+    the training data only
+  - monthly COVID deaths use only the multiple-cause column, never multiple plus
+    underlying
+
+## Global Side Effects
+
+- **Reads:** the four CSVs in `data/raw/`.
+- **Writes:** only to the output directory, which is `reports/` by default or set
+  with `--output`:
+  - `tables/*.csv`
+  - `figures/*.png`
+  - `metrics.json`, which is merged with any existing file rather than replaced
+- **No network access**, no database, and no writes outside the output directory.
+- **Global state:** matplotlib's global `rcParams` are changed while figures are
+  made.
+
+## System Verification
+
+- Run: `make test` (runs `python -m pytest`)
+- Full reproduction: `make reproduce`
+- Lint: `make lint`
+
 ## Data
 
 | File | Source | Unit of observation |
